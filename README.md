@@ -13,13 +13,7 @@ Simple and easy to use bulletproof vest for FiveM made by lilfraae
 ## Download & Installation
 1. Download Master or Release & Extract the .zip or Open the .zip.
 2. Add `ensure lfKevlar` to your server.cfg
-3. Insert into your item database these values:
-```
-INSERT INTO `items` (`name`, `label`, `weight`) VALUES 
-(`Light`, `Light armour`, 2000),
-(`Medium`, `Medium armour`, 5500),
-(`Heavy`, `Heavy armour`, 8500);
-```
+3. Insert yhe armour in your database using the file under `sql/item.sql`
 4. You're set!
 5. **Do not change the name or it will not work.**
 
