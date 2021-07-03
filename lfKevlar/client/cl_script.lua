@@ -71,8 +71,13 @@ AddEventHandler('playerSpawned', function(spawn)
     ResetPedMovementClipset(GetPlayerPed(-1), 0)
 end)
 
-RegisterCommand(_U('clear'), function()
-    if GetPedArmour(GetPlayerPed(-1)) == Config['reset'] then
-        armourOFF()
+-- Principal loop start
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(Config['TickTime'])
+        local ArmourStatus = GetPedArmour(GetPlayerPed(-1))
+        if ArmourStatus == Config['reset'] then
+            armourOFF()
+        end
     end
 end)
