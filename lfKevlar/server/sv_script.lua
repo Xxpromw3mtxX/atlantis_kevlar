@@ -10,14 +10,14 @@ AddEventHandler('lfKevlar:armourRemoveItem', function(item)
     xPlayer.removeInventoryItem(item, 1)
 end)
 
-ESX.RegisterUsableItem('Light', function(source)
+ESX.RegisterUsableItem(Config['light'], function(source)
 	TriggerClientEvent('lfKevlar:equipLightArmour', source)
 end)
 
-ESX.RegisterUsableItem('Medium', function(source)
+ESX.RegisterUsableItem(Config['medium'], function(source)
 	TriggerClientEvent('lfKevlar:equipMediumArmour', source)
 end)
 
-ESX.RegisterUsableItem('Heavy', function(source)
+ESX.RegisterUsableItem(Config['heavy'], function(source)
 	TriggerClientEvent('lfKevlar:equipHeavyArmour', source)
 end)
