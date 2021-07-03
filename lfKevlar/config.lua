@@ -3,6 +3,8 @@ Config = {}
 -- Language settings
 Config.Locale = 'it' -- Supported languages it, en
 
+Config['TickTime'] = 1000
+
 -- Armour reset value
 Config['reset'] = 0 
 
