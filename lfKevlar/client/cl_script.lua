@@ -70,3 +70,9 @@ AddEventHandler('playerSpawned', function(spawn)
     ClearPedLastWeaponDamage(GetPlayerPed(-1))
     ResetPedMovementClipset(GetPlayerPed(-1), 0)
 end)
+
+RegisterCommand(_U('clear'), function()
+    if GetPedArmour(GetPlayerPed(-1)) == Config['reset'] then
+        armourOFF()
+    end
+end)
