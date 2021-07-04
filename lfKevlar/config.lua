@@ -1,7 +1,7 @@
 Config = {}
 
 -- Language settings
-Config.Locale = 'it' -- Supported languages it, en
+Config.Locale = 'it'
 
 Config['TickTime'] = 1000
 
