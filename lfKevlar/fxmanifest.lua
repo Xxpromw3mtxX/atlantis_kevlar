@@ -8,14 +8,14 @@ version '1.0'
 
 client_scripts {
     '@es_extended/locale.lua',
-    'locales/it.lua',
+    'locales/*.lua',
     'config.lua',
     'client/cl_script.lua'
 }
 
 server_script {
     '@es_extended/locale.lua',
-    'locales/it.lua',
+    'locales/*.lua',
     'config.lua',
     'server/sv_script.lua'
 }
