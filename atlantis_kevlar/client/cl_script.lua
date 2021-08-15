@@ -1,5 +1,4 @@
 ESX = nil
-local isDead = false
 
 Citizen.CreateThread(function()
 	while ESX == nil do
@@ -9,53 +8,31 @@ Citizen.CreateThread(function()
 end)
 
 AddEventHandler('esx:onPlayerDeath', function(data)
-    isDead = true
-    SetPedArmour(GetPlayerPed(-1), Config['reset'])
+    SetPedArmour(GetPlayerPed(-1), 0)
     armourOFF()
 end)
 
 AddEventHandler('playerSpawned', function(spawn)
-    IsDead = false
-    SetPedArmour(GetPlayerPed(-1), Config['reset'])
-    ClearPedBloodDamage(GetPlayerPed(-1))
-    ResetPedVisibleDamage(GetPlayerPed(-1))
-    ClearPedLastWeaponDamage(GetPlayerPed(-1))
-    ResetPedMovementClipset(GetPlayerPed(-1), 0)
+    local player = PlayerPedId(-1)
+
+    SetPedArmour(player, 0)
+    ClearPedBloodDamage(player)
+    ResetPedVisibleDamage(player)
 end)
 
-RegisterNetEvent('atlantis_kevlar:equipLightArmour')
-AddEventHandler('atlantis_kevlar:equipLightArmour', function()
-    if GetPedArmour(GetPlayerPed(-1)) >= Config['light_weight'] then
-        TriggerEvent('mythic_notify:client:SendAlert', {type = 'error', text = _U('already_equipped'), length = 2500})
+RegisterNetEvent('atlantis_kevlar:equipArmour')
+AddEventHandler('atlantis_kevlar:equipArmour', function(type, weight)
+    if GetPedArmour(PlayerPedId(-1)) >= Config[type .. '_weight'] then
+        notify('error', _U('already_equipped'))
     else
-        equipArmor(Config['light'], Config['light_weight'])
-        TriggerEvent('mythic_notify:client:SendAlert', {type = 'success', text = _U('light_equip'), length = 2500})
-    end 
-end)
-
-RegisterNetEvent('atlantis_kevlar:equipMediumArmour')
-AddEventHandler('atlantis_kevlar:equipMediumArmour', function()
-    if GetPedArmour(GetPlayerPed(-1)) >= Config['medium_weight'] then
-        TriggerEvent('mythic_notify:client:SendAlert', {type = 'error', text = _U('already_equipped'), length = 2500})
-    else
-        equipArmor(Config['medium'], Config['medium_weight'])
-        TriggerEvent('mythic_notify:client:SendAlert', {type = 'success', text = _('medium_equip'), length = 2500})
-    end
-end)
-
-RegisterNetEvent('atlantis_kevlar:equipHeavyArmour')
-AddEventHandler('atlantis_kevlar:equipHeavyArmour', function()
-    if GetPedArmour(GetPlayerPed(-1)) >= Config['heavy_weight'] then
-        TriggerEvent('mythic_notify:client:SendAlert', {type = 'error', text = _U('already_equipped'), length = 2500})
-    else
-        equipArmor(Config['heavy'], Config['heavy_weight'])
-        TriggerEvent('mythic_notify:client:SendAlert', {type = 'success', text = _U('heavy_equip'), length = 2500})
+        equipArmor(type, Config[type .. '_weight'])
+        notify('inform', _U(type .. '_equip'))
     end
 end)
 
 RegisterNetEvent('atlantis_kevlar:armourRemoveClient')
 AddEventHandler('atlantis_kevlar:armourRemoveClient', function()
-    SetPedArmour(GetPlayerPed(-1), Config['reset'])
+    SetPedArmour(GetPlayerPed(-1), 0)
     armourOFF()
 end)
 
@@ -76,4 +53,12 @@ function armourOFF()
     TriggerEvent('skinchanger:getSkin', function(skin)
         TriggerEvent('skinchanger:loadClothes', skin, {['bproof_1'] = 0,  ['bproof_2'] = 0})  
     end)
+end
+
+function notify(type, msg)
+    if Config.mythic then
+        TriggerEvent('mythic_notify:client:SendAlert', {type = type, text = msg, length = 2500})
+    else
+        ESX.ShowNotification(msg)
+    end
 end
