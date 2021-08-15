@@ -11,15 +11,15 @@ AddEventHandler('atlantis_kevlar:armourRemoveItem', function(item)
 end)
 
 ESX.RegisterUsableItem(Config['light'], function(source)
-	TriggerClientEvent('atlantis_kevlar:equipLightArmour', source)
+	TriggerClientEvent('atlantis_kevlar:equipArmour', source, Config['light'], Config['light_weight'])
 end)
 
 ESX.RegisterUsableItem(Config['medium'], function(source)
-	TriggerClientEvent('atlantis_kevlar:equipMediumArmour', source)
+	TriggerClientEvent('atlantis_kevlar:equipArmour', source, Config['medium'], Config['medium_weight'])
 end)
 
 ESX.RegisterUsableItem(Config['heavy'], function(source)
-	TriggerClientEvent('atlantis_kevlar:equipHeavyArmour', source)
+	TriggerClientEvent('atlantis_kevlar:equipArmour', source, Config['heavy'], Config['heavy_weight'])
 end)
 
 RegisterServerEvent('atlantis_kevlar:armourRemove')
