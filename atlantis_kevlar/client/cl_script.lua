@@ -22,14 +22,15 @@ end)
 
 RegisterNetEvent('atlantis_kevlar:equipArmour')
 AddEventHandler('atlantis_kevlar:equipArmour', function(type, weight)
-    if GetPedArmour(PlayerPedId(-1)) >= Config[type .. '_weight'] then
+    if GetPedArmour(PlayerPedId(-1)) >= weight then
         notify('error', _U('already_equipped'))
     else
-        equipArmor(type, Config[type .. '_weight'])
+        equipArmor(type, weight)
         notify('inform', _U(type .. '_equip'))
     end
 end)
 
+-- krz_personalmenu settings DON'T MESS WITH THEM
 RegisterNetEvent('atlantis_kevlar:armourRemoveClient')
 AddEventHandler('atlantis_kevlar:armourRemoveClient', function()
     SetPedArmour(GetPlayerPed(-1), 0)
