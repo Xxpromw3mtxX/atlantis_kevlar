@@ -3,12 +3,10 @@ Config = {}
 -- Language settings
 Config.Locale = 'it'
 
-Config['TickTime'] = 1000
+-- Using mythic_notify?
+Config.mythic = true
 
--- Armour reset value
-Config['reset'] = 0 
-
--- Customize items names (If you change these, you'll need to change the db names too)
+-- Kevlar names, needed if using krz_personalmenu
 Config['light'] = 'light'  -- Change if you want to change the name of the light armour
 Config['medium'] = 'medium' -- Change if you want to change the name of the medium armour
 Config['heavy'] = 'heavy' -- Change if you want to change the name of the heavy armour
