@@ -8,7 +8,12 @@ Simple and easy to use bulletproof vest for FiveM made by lilfraae
 
 ## Requirements
 * Required:
+	* [ESX](https://github.com/esx-framework/esx-legacy/tree/main/%5Besx%5D/es_extended)
+* Optional:
 	* [mythic_notify](https://github.com/thelindat/mythic_notify)
+
+## Preview
+https://streamable.com/76awqy
 
 ## Download & Installation
 1. Download Master or Release & Extract the .zip or Open the .zip.
@@ -26,7 +31,7 @@ Simple and easy to use bulletproof vest for FiveM made by lilfraae
 
 ## Legal
 ### License
-lfKevlar - Simple and easy to use bulletproof vest for FiveM
+atlantis_kevlar - Simple and easy to use bulletproof vest for FiveM
 
 Copyright (C) 2011-2021 lilfraae/Xxprom3mtxX
 
