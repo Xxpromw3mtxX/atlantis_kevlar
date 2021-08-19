@@ -26,9 +26,6 @@ https://streamable.com/76awqy
 ## Known Bugs/Issues
 * None for now.
 
-## Credits
-* [mythic_notify](https://github.com/thelindat/mythic_notify)
-
 ## Legal
 ### License
 atlantis_kevlar - Simple and easy to use bulletproof vest for FiveM
