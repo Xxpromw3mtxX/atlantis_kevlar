@@ -13,13 +13,9 @@ client_scripts {
     'client/cl_script.lua'
 }
 
-server_script {
+server_scripts {
     '@es_extended/locale.lua',
     'locales/*.lua',
     'config.lua',
     'server/sv_script.lua'
 }
-
-dependency {
-    'mythic_notify'
-} 
