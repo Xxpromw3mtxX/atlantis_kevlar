@@ -9,7 +9,7 @@ end)
 
 AddEventHandler('esx:onPlayerDeath', function(data)
     SetPedArmour(GetPlayerPed(-1), 0)
-    armourOFF()
+    --armourOFF()
 end)
 
 AddEventHandler('playerSpawned', function(spawn)
@@ -34,17 +34,17 @@ end)
 RegisterNetEvent('atlantis_kevlar:armourRemoveClient')
 AddEventHandler('atlantis_kevlar:armourRemoveClient', function()
     SetPedArmour(GetPlayerPed(-1), 0)
-    armourOFF()
+    --armourOFF()
 end)
 
 
 function equipArmor(item, weight)
     TriggerServerEvent('atlantis_kevlar:armourRemoveItem', item)
     SetPedArmour(GetPlayerPed(-1), weight)
-    armourON()
+    --armourON()
 end
 
-function armourON()
+--[[function armourON()
     TriggerEvent('skinchanger:getSkin', function(skin)
         TriggerEvent('skinchanger:loadClothes', skin, {['bproof_1'] = 1,  ['bproof_2'] = 1}) 
     end)
@@ -54,7 +54,7 @@ function armourOFF()
     TriggerEvent('skinchanger:getSkin', function(skin)
         TriggerEvent('skinchanger:loadClothes', skin, {['bproof_1'] = 0,  ['bproof_2'] = 0})  
     end)
-end
+end]]
 
 function notify(type, msg)
     if Config.mythic then
