@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-name 'mw3_armour'
+name 'atlantis_kevlar'
 author 'lilfraae'
 description 'Kelvar script'
 version '1.0'
@@ -13,7 +13,7 @@ client_scripts {
     'client/cl_script.lua'
 }
 
-server_scripts {
+server_script {
     '@es_extended/locale.lua',
     'locales/*.lua',
     'config.lua',
