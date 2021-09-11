@@ -1,6 +1,6 @@
 Locales ['es'] = {
     ['already_equipped'] = 'Ya tienes un chaleco puesto',
-    ['light_equip'] = 'Chaleco ligero equipado',
-    ['medium_equip'] = 'Chaleco mediano equipado',
-    ['heavy_equip'] = 'Chaleco pesado equipado',
+    ['gap20_equip'] = 'Chaleco ligero equipado',
+    ['gap40_equip'] = 'Chaleco mediano equipado',
+    ['gap100_equip'] = 'Chaleco pesado equipado',
 }
