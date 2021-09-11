@@ -24,11 +24,11 @@ AddEventHandler('atlantis_kevlar:armourRemove', function(armourWeight)
 
     TriggerClientEvent('atlantis_kevlar:armourRemoveClient', source)
 	
-	if armourWeight <= Config.Kevlar['light'] then
+	if armourWeight <= Config.Kevlar['gap20'] then
 		xPlayer.addInventoryItem(Config['light'], 1)
-	elseif armourWeight > Config.Kevlar['light'] and armourWeight <= Config.Kevlar['medium'] or armourWeight < Config.Kevlar['heavy'] then
+	elseif armourWeight > Config.Kevlar['gap20'] and armourWeight <= Config.Kevlar['gap40'] or armourWeight < Config.Kevlar['gap100'] then
 		xPlayer.addInventoryItem(Config['medium'], 1)
-	elseif armourWeight == Config.Kevlar['heavy'] then
+	elseif armourWeight == Config.Kevlar['gap100'] then
 		xPlayer.addInventoryItem(Config['heavy'], 1)
 	end
 end)
